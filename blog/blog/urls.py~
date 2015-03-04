@@ -10,5 +10,4 @@ urlpatterns = patterns('',
     url(r'^blogapp/', include('blogapp.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/v1/', include(post_resource.urls)),
-    url(r'^api/v1/', include(comment_resource.urls)),
 )
