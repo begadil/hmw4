@@ -18,11 +18,7 @@
 	    border-radius: 10px;
 	    -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, .5);
 	    box-shadow: 0 1px 20px rgba(0, 0, 0, .5);
-	    line-height: 1;
-	}
-
-	.blogs .text{
-	    text-indent: 20px;
+	    line-height: 1.2;
 	}
 
 	.blog h1{
@@ -47,6 +43,9 @@
 	    color: #555;
 	    border: 1px solid rgba(0,0,0,.3);
 	    padding: 10px;
+	    border-radius: 10px;
+	    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+	    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
 	}
 
 	.comments p{
@@ -65,17 +64,22 @@
 	    line-height: 50px;
 	}
 
-	.blog .comments ul li:last_child{
-	    border-bottom: 1px dashed transparent;
-	}
 
 	.blog .comments ul li span{
 	    color: #333;
 	    font-weight: bold;
+	    display: inline-block;
 	}
 
 	.blog .comments ul li .time_c{
 	    color: #888;
+	}
+	
+	.blog .comments ul li .com{
+	    display: block;
+            font-weight: 100;
+	    text-indent: 50px;
+	    margin-top: -20px;
 	}
     </style>
 </head>
@@ -87,18 +91,26 @@
 		<span>posted: {{ post.pub_date }}</span>
 		<span>updated: {{ post.upd_date }}</span>
 	</div>
-        <div class="text">
+        <p class="text">
             {{ post.text }}
-        </div>
+        </p>
         <div class="comments">
-            <p> comments: </p>
-            <ul>
-                <li><span>seka</span> <span class="time_c">(time)</span>: sakldasdklaskldkal</li>
-                <li><span>seka</span> <span class="time_c">(time)</span>: sakldasdklaskldkal</li>
-                <li><span>seka</span> <span class="time_c">(time)</span>: sakldasdklaskldkal</li>
-                <li><span>seka</span> <span class="time_c">(time)</span>: sakldasdklaskldkal</li>
-                <li><span>seka</span> <span class="time_c">(time)</span>: sakldasdklaskldkal</li>
+	    {% if comment %}
+            <p> 
+		Comments
+	    </p>
+	    <ul>
+		{% for a in comment %} 
+		    <li>
+			<span>{{ a.author }}</span>
+			<span class="time_c">({{ a.pub_date }})</span>
+			<span class="com"> {{ a.text }} </span>
+		    </li>
+		{% endfor %}
             </ul>
+	    {% else %}
+		<p>No comments to this post</p>
+	    {% endif %}
         </div>
     </div>
 </body>

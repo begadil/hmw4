@@ -50,13 +50,14 @@
 	{% for post in latest_post_list %}
         <li class="blogs">
 		<a href="/blogapp/{{ post.id }}/">{{ post.title }}</a>
-		<small> {{ post.author }} </small>
+		<small>Author: {{ post.author }} </small>
+		<small>Posted on: {{ post.pub_date }} </small>
 	</li>
 	{% endfor %}
     </ul>
-{% else %}
-<p>No posts are available.</p>
-{% endif %}
+	{% else %}
+	<p>No posts are available.</p>
+	{% endif %}
 </body>
 
 </html>

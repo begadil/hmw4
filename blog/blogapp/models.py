@@ -9,14 +9,14 @@ class Post(models.Model):
     is_public = models.BooleanField(default=True)
 
     def __str__(self):
-	return self
+	return self.title
 
 
 class Comment(models.Model):
     author = models.CharField(max_length=50)
     text = models.TextField()
     pub_date = models.DateTimeField('date published')
-    post = models.ForeignKey(Post)
+    post = models.ForeignKey(Post, related_query_name="fk")
 
     def __str__(self):
 	return self.text
