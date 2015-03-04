@@ -1,0 +1,77 @@
+* {
+    transition: all .5s;
+}
+
+body{
+    background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png);
+    color: #333;
+    font: 1em Tahoma, Arial;
+}
+
+.blog{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, .5);
+    line-height: 1;
+}
+
+.blogs .text{
+    text-indent: 20px;
+}
+
+.blog h1{
+    color: rgba(0, 0, 0, .7);
+}
+
+.blog h3{
+    color: rgba(0, 0, 0, .5);
+}
+
+.blog .time span{
+    display: block;
+    color: #888;
+}
+
+.blog .time{
+    margin-bottom: 10px;
+}
+
+.comments{
+    margin-top: 40px;
+    color: #555;
+    border: 1px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.comments p{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.blog .comments ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog .comments ul li{
+    display: block;
+    border-bottom: 1px dashed rgba(0,0,0,.3);
+    line-height: 50px;
+}
+
+.blog .comments ul li:last_child{
+    border-bottom: 1px dashed transparent;
+}
+
+.blog .comments ul li span{
+    color: #333;
+    font-weight: bold;
+}
+
+.blog .comments ul li .time_c{
+    color: #888;
+}
